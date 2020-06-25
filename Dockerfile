@@ -7,6 +7,7 @@ WORKDIR trpg_bot
 RUN apt -y update
 RUN apt -y install git vim
 COPY requirements.txt /trpg_bot/
+COPY bot-token.txt /trpg_bot/
 RUN pip install --upgrade pip
 RUN pip install --upgrade setuptools
 RUN pip install -r requirements.txt
