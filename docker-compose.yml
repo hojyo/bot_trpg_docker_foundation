@@ -1,31 +1,13 @@
-version: '3.7'
+version: '2'
 
 services:
   discord-bot:
-    build: ./docker-discord-trpg-bot
+    build: ./
     command: python main.py 
-    volumes:
-      - ./docker-discord-trpg-bot/:/trpg_bot/
     ports:
       - 9522:9522
-    environment:
-      - SECRET_KEY=nyal
-      - DATABASE_DB=coc_db
-      - DATABASE_USER=coc_nyal
-      - DATABASE_PASSWORD=nyalnyal5
-      - DATABASE_HOST=db
-      - DATABASE_PORT=5432
     depends_on:
-      - db
+      - redis
   
-    db:
-      image: postgres:11.4-alpine
-      volumes:
-        - coc_charadata:/var/lib/postgresql/data
-      environment:
-        - POSTGRES_USER=coc_nyal
-        - POSTGRE_PASSWORD=nyalnyal5
-        - POSTGRES_DB=coc_db
-
-volumes:
-  postgres_data:
+  redis:
+    image: "redis:alpine" 

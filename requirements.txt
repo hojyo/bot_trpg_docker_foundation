@@ -1,11 +1,3 @@
+discord.py
 requests
-glob
-json
-os
-re
-traceback
-asyncio
-pickle
-urllib.parse
-diccord.py
-sqlite3
+redis
