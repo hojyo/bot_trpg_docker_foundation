@@ -11,6 +11,6 @@ RUN pip install --upgrade pip
 RUN pip install --upgrade setuptools
 RUN pip install -r requirements.txt
 
-# RUN git clone https://github.com/hojyo/discord-bot.git
-# RUN cd trpg_bot
-# CMD ["python", "main.py"]
+RUN git clone https://github.com/hojyo/discord-bot.git
+CMD ["cd", "discord-bot"]
+CMD ["python", "main.py"]

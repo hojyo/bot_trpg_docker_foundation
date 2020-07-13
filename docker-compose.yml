@@ -8,6 +8,7 @@ services:
       - 9522:9522
     depends_on:
       - redis
+    tty: true
   
   redis:
     image: "redis:alpine" 
